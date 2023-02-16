@@ -23,12 +23,14 @@ class ChatBotController extends Controller
     // метод для обработки сообщения и генерации ответа
     private function getResponse($message)
     {
-        if (strpos($message, 'привет') !== false) {
-            return 'Здравствуйте! Как я могу вам помочь?';
-        } elseif (strpos($message, 'спасибо') !== false) {
-            return 'Не за что! Рад был помочь.';
+        if (strpos(strtolower($message), 'привет, я хочу записаться на консультацию') !== false) {
+            return 'Здравствуйте! как я могу вас назвать?';
+        } elseif (strpos($message, 'илья') !== false) {
+            return 'Напишите свой email';
+        } elseif (strpos($message, 'khristoforov-i@mail.ru') !== false) {
+            return 'Назовите удобную дату и время';
         } else {
-            return 'Извините, я не понимаю вашего сообщения.';
+            return 'Благодарим. Письмо вам придет на почту';
         }
     }
 }

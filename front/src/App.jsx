@@ -1,7 +1,28 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Chat from './components/chat'
 
 function App() {
+	const [isOpen, setIsOpen] = useState(false)
+
+	const handleClick = () => {
+		setIsOpen(!isOpen)
+	}
+
+	const menuRef = useRef()
+
+	useEffect(() => {
+		const onClick = e => {
+			if (menuRef.current && !menuRef.current.contains(e.target)) {
+				setIsOpen(false)
+			}
+		}
+
+		document.addEventListener('mousedown', onClick)
+		return () => {
+			document.removeEventListener('mousedown', onClick)
+		}
+	}, [menuRef])
+
 	return (
 		<div className='bg-[#16151B]'>
 			<header className='flex justify-between items-center px-3'>
@@ -13,6 +34,7 @@ function App() {
 					stroke-width='1.5'
 					stroke='white'
 					class='w-10 h-10'
+					onClick={handleClick}
 				>
 					<path
 						stroke-linecap='round'
@@ -22,9 +44,50 @@ function App() {
 				</svg>
 			</header>
 
+			{isOpen && (
+				<nav
+					ref={menuRef}
+					className='fixed top-0 left-0 w-full pt-8 text-white bg-gray-800 flex flex-col justify-center pl-7 rounded-b-3xl'
+				>
+					<img src='/assets/logo_menu.png' alt='' className='w-fit pb-[40px]' />
+					<ul className='self-start '>
+						<li className='pb-11'>
+							<a href='#' className='text-[20px]'>
+								Главная
+							</a>
+						</li>
+						<li className='pb-11'>
+							<a href='#' className='text-[20px]'>
+								Сотрудничество
+							</a>
+						</li>
+						<li className='pb-11'>
+							<a href='#' className='text-[20px]'>
+								Преимущества
+							</a>
+						</li>
+						<li className='pb-11'>
+							<a href='#' className='text-[20px]'>
+								Отзывы
+							</a>
+						</li>
+						<li className='pb-11'>
+							<a href='#' className='text-[20px]'>
+								Выгода
+							</a>
+						</li>
+						<li className='pb-11'>
+							<a href='#' className='text-[20px]'>
+								До/После
+							</a>
+						</li>
+					</ul>
+				</nav>
+			)}
+
 			<section>
-				<h2 className='text-black font-bold dark:text-white text-center text-[26px]'>
-					Хотите свой онлайн-курс?
+				<h2 className='text-black font-bold dark:text-white text-center text-[32px]'>
+					Хотите быть всегда в тренде?
 				</h2>
 				<h1 className='text-black font-bold dark:text-white text-center	text-4xl mt-2'>
 					Вам к Skillometer!
@@ -96,6 +159,10 @@ function App() {
 						</p>
 					</div>
 				</div>
+			</section>
+
+			<section>
+				<div></div>
 			</section>
 
 			{/* <section>
