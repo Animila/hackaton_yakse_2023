@@ -12,7 +12,7 @@ function Chat() {
 		event.preventDefault()
 		console.log(JSON.stringify({ message }))
 		const response = await fetch('https://api.hackaton-yakse.ru/api/chatbot', {
-			method: 'POST',
+			method: 'POST',	
 			headers: {
 				'Content-Type': 'application/json',
 			},

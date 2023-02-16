@@ -26,10 +26,10 @@ function App() {
 				<h2 className='text-black font-bold dark:text-white text-center text-[26px]'>
 					Хотите свой онлайн-курс?
 				</h2>
-				<h1 className='text-black font-bold dark:text-white text-center	text-4xl mt-5'>
+				<h1 className='text-black font-bold dark:text-white text-center	text-4xl mt-2'>
 					Вам к Skillometer!
 				</h1>
-				<div className='text-black font-bold dark:text-white text-center text-xl mt-4 px-3'>
+				<div className='text-black font-bold dark:text-white text-center text-[14px] mt-4 px-4'>
 					Используя возможности машинного обучения и основываясь на обширных
 					данных рынка, наш сервис поможет вам построить удобную образовательную
 					траекторию
@@ -37,12 +37,12 @@ function App() {
 			</section>
 
 			<section>
-				<div className='w-100 mx-4 h-[465px] mt-20 bg-[#343843] rounded-3xl pt-4 pb-5 p'>
+				<div className='w-100 mx-4 min-h-[492px] mt-20 rounded-3xl border-white border-2'>
 					<div className='text-white flex flex-col justify-center pb-4'>
 						<img
 							src='/assets/info/hat.png'
 							alt=''
-							className='h-[86px] w-[112px] self-center'
+							className='h-[90px] w-[90px] self-center'
 						/>
 						<h4 className='self-center text-xl'>321</h4>
 						<p className='self-center text-xl font-normal pb-1'>
@@ -53,7 +53,7 @@ function App() {
 						<img
 							src='/assets/info/people.png'
 							alt=''
-							className='h-[86px] w-[96px] self-center pb-1'
+							className='h-[90px] w-[90px] self-center pb-1'
 						/>
 						<h4 className='self-center text-xl'>104 329</h4>
 						<p className='self-center text-xl font-normal '>Обучающихся</p>
@@ -62,12 +62,13 @@ function App() {
 						<img
 							src='/assets/info/house.png'
 							alt=''
-							className='h-[58px] w-[88px] self-center pb-1'
+							className='h-[90px] w-[90px] self-center pb-1'
 						/>
 						<h4 className='self-center text-xl'>1 321 </h4>
 						<p className='self-center text-xl font-normal'>Онлайн - курсов</p>
 					</div>
 				</div>
+				
 			</section>
 
 			{/* <section>
@@ -77,7 +78,7 @@ function App() {
 					</h3>
 				</div>
 			</section> */}
-			<Chat/>
+			<Chat />
 		</div>
 	)
 }
