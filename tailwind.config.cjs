@@ -5,7 +5,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				inter: ['inter', 'serif'],
+				proDisplay: ['SF Pro Display', 'serif'],
 			},
 		},
 	},
