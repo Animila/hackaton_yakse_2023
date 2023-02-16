@@ -11,14 +11,17 @@ function Chat() {
 	const handleSubmit = async event => {
 		event.preventDefault()
 		console.log(JSON.stringify({ message }))
-		const response = await fetch('http://127.0.0.1:8000/api/chatbot', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
+		const response = await fetch(
+			'http://api.https://hackaton-yakse.ru/api/chatbot',
+			{
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
 
-			body: JSON.stringify({ message }),
-		}).then(res => res.json())
+				body: JSON.stringify({ message }),
+			}
+		).then(res => res.json())
 		console.log(response.response)
 		setResponse(response.response)
 	}
