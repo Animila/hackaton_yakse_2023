@@ -77,6 +77,7 @@ function App() {
 					</h3>
 				</div>
 			</section> */}
+			<Chat/>
 		</div>
 	)
 }
