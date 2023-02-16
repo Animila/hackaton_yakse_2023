@@ -11,7 +11,7 @@ function Chat() {
 	const handleSubmit = async event => {
 		event.preventDefault()
 		console.log(JSON.stringify({ message }))
-		const response = await fetch('http://api.hackaton-yakse.ru/api/chatbot', {
+		const response = await fetch('https://api.hackaton-yakse.ru/api/chatbot', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
