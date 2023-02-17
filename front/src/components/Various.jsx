@@ -3,7 +3,7 @@ import React from 'react'
 function Various(params) {
 	return (
 		<section>
-			<h3 className='text-white mt-16 text-center text-[30px]'>
+			<h3 id='client' className='text-white mt-16 text-center text-[30px]'>
 				Варианты сотрудничества
 			</h3>
 			<div className='w-100 mx-4 min-h-[450px] mt-2 rounded-3xl border-white border-2'>

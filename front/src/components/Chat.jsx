@@ -72,7 +72,7 @@ function Chat({ isActive, setIsActive }) {
 				</svg>
 			</div>
 
-			<div className='relative overflow-scroll h-[100vh]'>
+			<div className='relative h-[100vh] overflow-x-hidden overscroll-y-contain'>
 				{history.map((msg, i) => (
 					<div>
 						<div

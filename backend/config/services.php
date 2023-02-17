@@ -15,7 +15,7 @@ return [
     */
 
     'dialogflow' => [
-        'project_id' => env('DIALOGFLOW_PROJECT_ID'),
+        'project_id' => 'newagent-sadv',
         'key_file_path' => storage_path('app/dialogflow/newagent-sadv-d0c0ed83896c.json'),
         'language_code' => 'ru',
     ],
