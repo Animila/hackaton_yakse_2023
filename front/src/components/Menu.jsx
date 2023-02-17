@@ -24,7 +24,9 @@ function Menu({ isActive, setIsActive }) {
 	return (
 		<header>
 			<div className='flex justify-between items-center px-3'>
-				<img src='/assets/logo.png' alt='' className='py-8' />
+				<a href='https://skillometer.ru'>
+					<img src='/assets/logo.png' alt='' className='py-8 w-40' />
+				</a>
 				<svg
 					xmlns='http://www.w3.org/2000/svg'
 					fill='none'
@@ -43,7 +45,7 @@ function Menu({ isActive, setIsActive }) {
 			{isOpen && (
 				<nav
 					ref={menuRef}
-					className='fixed top-0 left-0 w-full pt-8 text-white bg-gray-800 flex flex-col justify-center pl-7 rounded-b-3xl'
+					className='fixed top-0 left-0 w-full pt-8 text-white bg-gray-800 flex flex-col justify-center pl-7 rounded-b-3xl '
 				>
 					<img src='/assets/logo_menu.png' alt='' className='w-fit pb-[40px]' />
 					<ul className='self-start '>
@@ -72,6 +74,7 @@ function Menu({ isActive, setIsActive }) {
 								Выгода
 							</a>
 						</li>
+
 						<li className='pb-11'>
 							<a href='#' className='text-[20px]'>
 								До/После
