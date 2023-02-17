@@ -12,7 +12,7 @@ function Chat({ isActive, setIsActive }) {
 		event.preventDefault()
 
 		try {
-			const response = await fetch('http://127.0.0.1:8000/api/chatbot', {
+			const response = await fetch('https://api.hackaton-yakse.ru/api/chatbot', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
