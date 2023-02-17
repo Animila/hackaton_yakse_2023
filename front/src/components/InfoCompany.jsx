@@ -2,7 +2,7 @@ import React from 'react'
 
 function InfoCompany() {
 	return (
-		<div className='w-100 mx-4 min-h-[492px] mt-20 rounded-3xl border-white border-2'>
+		<div className='w-100 mx-4 min-h-[492px] mt-10 rounded-3xl border-white border-2'>
 			<div className='text-white flex flex-col justify-center pb-4'>
 				<img
 					src='/assets/info/hat.png'

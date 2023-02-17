@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Google\Cloud\Dialogflow\V2\QueryInput;
+use Google\Cloud\Dialogflow\V2\SessionsClient;
+use Google\Cloud\Dialogflow\V2\TextInput;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class ChatBotController extends Controller
 {
@@ -10,27 +14,38 @@ class ChatBotController extends Controller
     {
         // получаем сообщение от пользователя
         $message = $request->input('message');
+        Log::info($message);
 
         // обрабатываем сообщение и генерируем ответ чат-бота
-        $response = $this->getResponse($message);
+        $response = (string) $this->getResponse($message);
 
         // возвращаем ответ чат-бота
-        return response()->json([
+
+        return ( response()->json([
             'response' => $response
-        ]);
+        ]));
     }
 
     // метод для обработки сообщения и генерации ответа
     private function getResponse($message)
     {
-        if (strpos(strtolower($message), 'привет, я хочу записаться на консультацию') !== false) {
-            return 'Здравствуйте! как я могу вас назвать?';
-        } elseif (strpos($message, 'илья') !== false) {
-            return 'Напишите свой email';
-        } elseif (strpos($message, 'khristoforov-i@mail.ru') !== false) {
-            return 'Назовите удобную дату и время';
-        } else {
-            return 'Благодарим. Письмо вам придет на почту';
-        }
+        $sessionsClient = new SessionsClient([
+            'credentials' => storage_path('app/dialogflow/newagent-sadv-d0c0ed83896c.json')
+        ]);
+        $session = $sessionsClient->sessionName(env('DIALOGFLOW_PROJECT_ID'), uniqid());
+
+        $textInput = new TextInput();
+        $textInput->setText($message);
+        $textInput->setLanguageCode('ru');
+
+        $queryInput = new QueryInput();
+        $queryInput->setText($textInput);
+
+        $response = $sessionsClient->detectIntent($session, $queryInput);
+
+        $sessionsClient->close();
+
+        $responseText = $response->getQueryResult()->getFulfillmentText();
+        return (string) $responseText;
     }
 }

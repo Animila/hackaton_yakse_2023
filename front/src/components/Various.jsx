@@ -13,8 +13,8 @@ function Various(params) {
 						alt=''
 						className='h-[90px] w-[90px] self-center'
 					/>
-					<h4 className='self-center text-[24px]'>Партнер</h4>
-					<p className='self-center text-[10px] font-normal pb-1 text-[#96ADFF] underline'>
+					<h4 className='self-center text-[24px]'>Партнерство</h4>
+					<p className='self-center text-[12px] font-normal pb-1 text-[#96ADFF] underline'>
 						оставить заявку
 					</p>
 				</div>
@@ -24,8 +24,8 @@ function Various(params) {
 						alt=''
 						className='h-[90px] w-[90px] self-center pb-1'
 					/>
-					<h4 className='self-center text-[24px]'>Стать разработчиком</h4>
-					<p className='self-center text-[10px] font-normal text-[#96ADFF] underline'>
+					<h4 className='self-center text-[24px]'>Индивидуальность</h4>
+					<p className='self-center text-[12px] font-normal text-[#96ADFF] underline'>
 						оставить заявку
 					</p>
 				</div>

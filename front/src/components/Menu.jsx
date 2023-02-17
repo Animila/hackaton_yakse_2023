@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-function Menu() {
+function Menu({ isActive, setIsActive }) {
 	const [isOpen, setIsOpen] = useState(false)
 
 	const handleClick = () => {
@@ -75,6 +75,11 @@ function Menu() {
 						<li className='pb-11'>
 							<a href='#' className='text-[20px]'>
 								До/После
+							</a>
+						</li>
+						<li className='pb-11'>
+							<a className='text-[20px]' onClick={() => setIsActive(!isActive)}>
+								Чат-бот
 							</a>
 						</li>
 					</ul>

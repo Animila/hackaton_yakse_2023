@@ -2,7 +2,7 @@ import React from 'react'
 
 function Title() {
 	return (
-		<section>
+		<section className='mb-7'>
 			<h2 className='text-black font-bold dark:text-white text-center text-[32px]'>
 				Хотите быть всегда в тренде?
 			</h2>

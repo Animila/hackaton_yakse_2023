@@ -14,6 +14,12 @@ return [
     |
     */
 
+    'dialogflow' => [
+        'project_id' => env('DIALOGFLOW_PROJECT_ID'),
+        'key_file_path' => storage_path('app/dialogflow/newagent-sadv-d0c0ed83896c.json'),
+        'language_code' => 'ru',
+    ],
+
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),
