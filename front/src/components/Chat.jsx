@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function Chat({ isActive, setIsActive }) {
+function Chat({ sessionId, isActive, setIsActive }) {
 	const [message, setMessage] = useState('')
 	const [history, setHistory] = useState([])
 	const [isLoad, setIsLoad] = useState(false)
@@ -16,16 +16,16 @@ function Chat({ isActive, setIsActive }) {
 		setMessage('')
 
 		try {
-			const response = await fetch(
-				'https://api.hackaton-yakse.ru/api/chatbot',
-				{
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json',
-					},
-					body: JSON.stringify({ message }),
-				}
-			).then(response => response.json())
+			const response = await fetch('https://api.hackaton-yakse.ru/api/chatbot', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					message: message,
+					sessionId: sessionId,
+				}),
+			}).then(response => response.json())
 
 			if (!response) {
 				throw new Error('У вас какие-то проблемы с интернетом')
