@@ -25,7 +25,7 @@ class WebHook extends Controller
 
 // Создаем новое письмо
         $message = (new Swift_Message('Заголовок письма'))
-            ->setFrom(['khristoforov-i@mail.ru' => 'Your Name'])
+            ->setFrom(['h.yakse@itypas.ru' => 'Your Name'])
             ->setTo('khristoforov-i@mail.ru')
             ->setBody('Текст письма с параметрами: '.' Привет');
 
